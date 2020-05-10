@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Find My Place</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="main">
+      <div class="main__sidebar">
+        <div class="main__sidebar-header">
+          <span class="main__sidebar-title">Find My Place</span>
+        </div>
+        <form class="main__form" id="form">
+          <input type="text" class="main__form-input" id="findAddress" placeholder="Type an Address" required>
+
+          <button class="main__form-button">
+            <span class="main__form-buttonTitle">
+              Let´s Find!
+            </span>
+          </button>
+        </form> 
+        <div class="main__addressListDiv">
+          
+        </div>
+        <div class="main__sidebar-footer">
+          <span class="main__sidebar-footerTitle">Made with <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.7207 3.81654C15.8028 -2.56226 9.56939 0.289436 9 3.47884C8.22083 0.101824 2.1373 -2.41218 0.27928 3.81654C-1.78852 10.7582 8.28077 16.9869 9 18C9.71924 17.1745 19.7885 10.6456 17.7207 3.81654" fill="#0E6C83"/>
+            </svg>
+            by Leandro Moura</span>
+        </div>
+      </div>
+      <div id="map"></div>
+    </div>
+    <script src="main.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ YOUR_KEY_HERE }}&libraries=places&callback=initMap"
+    async defer></script>
+  </body>
