@@ -1,4 +1,4 @@
-var apiKey = '{{YOUR_KEY_HERE}}';
+var apiKey = 'AIzaSyC-XhYnXnsWYVM-Hr4SEclR-PLwz6LZR1k';
 var map;
 var marker = '';
 var predictions = [];
@@ -7,6 +7,8 @@ var findAddress = document.getElementById('findAddress');
 var ulAddressEl = document.querySelector('#adressListUl');
 var addressListDiv = document.querySelector('.main__addressListDiv');
 var btnSubmit = document.getElementById('form');
+var btnAnimation = document.querySelector('.main__navbar-animationButton')
+var animationIcon = document.querySelector('.main__navbar-animationIcon');
 
 var locationBrazil = {
     lat: -14.235004, lng: -51.92528
@@ -17,13 +19,24 @@ function initMap() {
     center: locationBrazil,
     zoom: 4
   });
+
+  map.controls[google.maps.ControlPosition.TOP_CENTER].push(btnAnimation);
 }
 
-function getPredictions() {   
+function checkRotate() {
+    if(animationIcon.classList.contains('rotate')) {
+        animationIcon.classList.remove('rotate');
+    }
+}
+
+function getPredictions() {
+
+    checkRotate()  
+
     predictions = []; 
     var inputObject = {
         input: findAddress.value
-    };
+    };    
     
     var googleAutoComplete = new google.maps.places.AutocompleteService();
     
@@ -36,7 +49,24 @@ function getPredictions() {
     });
 }
 
+function animationList() {
+    var addressListUl = document.querySelector('.main__addressListUl');
+
+    if(addressListUl.classList.contains('main__addressListUl-hide')) {
+        addressListUl.classList.remove('main__addressListUl-hide');
+        animationIcon.classList.remove('rotate');
+        return;
+    }
+    
+    addressListUl.classList.add('main__addressListUl-hide');
+    animationIcon.classList.add('rotate');
+
+}
+
 function populatePredList(predictions) {
+    
+
+    document.querySelector('.main__navbar-animationButton').style.display = "block";
 
     addressListDiv.innerHTML = '';
     addressListDiv.insertAdjacentHTML('beforeend',
@@ -89,16 +119,18 @@ function pointInMap(location) {
         map: map,
     });
 
+    
     map.setCenter(data.results[0].geometry.location);
     map.setZoom(15);
     info(data.results[0].formatted_address);
 }
 
 function info(location) {
-    var info = new google.maps.InfoWindow({
+    var infoContent = new google.maps.InfoWindow({
         content: location
     });
-    info.open(map, marker);
+    infoContent.open(map, marker);
+    google.maps.event.addListener(marker, 'click', () => infoContent.open(map, marker));
 }
 
 function getGeocode(address, resolve) {
@@ -121,6 +153,7 @@ function getGeocode(address, resolve) {
     
     xhr.send();
 }
+
 
 btnSubmit.addEventListener('submit', e => {
     e.preventDefault(); 
