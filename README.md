@@ -2,6 +2,9 @@
 
 Find my Place is a JS Vanilla App, build as a challenge for an opportunity.
 
+Live Demo: https://lribeiromoura.github.io/FindMyPlace/
+Figma: https://www.figma.com/file/8dg4TRZpIpWOxy87FeDNAt/FindMyPlace?node-id=0%3A1
+
 ## Installation
 
 1. Download the entire project.
