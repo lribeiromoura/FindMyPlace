@@ -17,9 +17,13 @@ var locationBrazil = {
 function initMap() {
   map = new google.maps.Map(mapElement, {
     center: locationBrazil,
-    zoom: 4
+    zoom: 4,
+    mapTypeControlOptions: {
+      style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+    }
   });
 
+  
   map.controls[google.maps.ControlPosition.TOP_CENTER].push(btnAnimation);
 }
 
