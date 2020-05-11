@@ -1,10 +1,12 @@
 html {
   height: 100%;
+  overflow: hidden;
 }
 
 body {
   margin: auto;
   height: 100%;
+  overflow: hidden;
 }
 
 #map {
@@ -82,7 +84,7 @@ body {
 .main__navbar-animationButton {
   display: none;
   background-color: #FFF;
-  z-index: 1;
+  z-index: 1 !important;
   border-radius: 1px;
   width: 90px;
   height: 50px;
