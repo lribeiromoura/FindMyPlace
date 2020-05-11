@@ -1,0 +1,198 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: auto;
+  height: 100%;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+}
+
+.main__navbar-header {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 64px;
+  width: 100%;
+  background: linear-gradient(114.75deg, #014872 17.23%, #A0EACF 118.45%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding-top: 0;
+}
+
+.main__navbar-title {
+  position: absolute;
+
+  font-family: Roboto;
+  font-size: 22px;
+  line-height: 26px;
+  color: #FFFFFF;
+}
+
+.main__form {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+
+  padding: 3px;
+}
+
+.main__form-input {
+  background: #FFF url(assets/search.png) no-repeat ;
+  background-repeat: no-repeat;
+  background-position: 5px;
+  text-indent: 35px;
+  height: 26px;
+  margin-bottom: 5px;
+
+  margin-top: 10px;
+
+  border: 1px solid #000000;
+  border-radius: 4px;
+}
+
+.main__form-button{
+  height: 39px;  
+  background: #0E6C83;
+  border-radius: 4px;
+}
+
+.main__form-buttonTitle {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #FBFBFB;
+}
+
+.main__addressListDiv {
+  display: flex;
+  width: 100%;
+  margin: 0 3px;
+  max-height: 185px;
+}
+
+.main__navbar-animationButton {
+  display: none;
+  background-color: #FFF;
+  z-index: 1;
+  border-radius: 1px;
+  width: 90px;
+  height: 50px;
+  transform: translate(10px, -2px);
+  
+}
+
+.main__navbar-animationButton:focus {
+  outline: none;
+}
+
+.main__navbar-animationButton > svg{
+  width: 20px;
+  height: 20px;
+  transition: 0.4s;
+
+}
+
+.rotate {
+  transition: 0.4s;
+  transform:rotate(180deg);
+}
+
+.main__addressListUl {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  margin: 3px 0;
+  list-style: none;
+  max-height: 180px;
+  
+  overflow: auto;
+  background: #FFFFFF;
+  border: 1px solid rgba(14, 108, 131, 0.5);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  padding: 0;
+
+  transition: max-height 0.5s ease-in-out;
+
+}
+
+.main__addressListUl-hide {
+  max-height: 0;
+  border: 0;
+  pointer-events: none;
+}
+
+.main__addressListLi {
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+  min-height: 70px;
+  box-sizing: border-box;
+  padding: 15px 9px 17px 11px;
+}
+
+.main__addressListLi:not(:last-child) {
+  border-bottom: 1px solid #0E6C83;
+}
+
+.main__addressListLi-Highlight {
+  background-color: #f2f2f2;
+}
+
+.main__addressListLi-Highlight > span {
+  font-weight: bold;
+}
+
+.main__addressListLi > img {
+  padding-right: 5px;
+}
+
+.main__addressListLi-description {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  word-break: break-word;
+  color: #000000;
+}
+
+.main__navbar-footer {
+  display: flex;
+  justify-content: center;
+
+  margin-top: auto;
+  padding: 5px;
+}
+
+.main__navbar-footerTitle {
+  display: flex;
+}
+
+.main__navbar-footerTitle > svg {
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.main__navbar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
